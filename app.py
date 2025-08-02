@@ -5,13 +5,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "<h1>Hello World!</h1>"
+    return "<h1>Hello World :)</h1>"
 
 
 @app.route('/greet')
 @app.route('/greet/<name>')
 def greet(name=""):
-    return f"<h2>Hello {name}</h2>"
+    return f"<h2>Hello {name if name else 'there'}!</h2>"
+
 
 @app.route('/convert/<celsius>')# covert temperature
 def convert(celsius):
