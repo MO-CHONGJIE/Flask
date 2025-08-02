@@ -13,6 +13,15 @@ def home():
 def greet(name=""):
     return f"<h2>Hello {name}</h2>"
 
+@app.route('/convert/<celsius>')
+def convert(celsius):
+    try:
+        c = float(celsius)
+        f = c * 9.0 / 5 + 32
+        return f"<p>{c}°C = {f:.1f}°F</p>"
+    except ValueError:
+        return "<p>Invalid number!</p>"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
