@@ -13,7 +13,7 @@ def home():
 def greet(name=""):
     return f"<h2>Hello {name}</h2>"
 
-@app.route('/convert/<celsius>')
+@app.route('/convert/<celsius>')# covert temperature
 def convert(celsius):
     try:
         c = float(celsius)
